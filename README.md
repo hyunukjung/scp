@@ -1,0 +1,2 @@
+# scp
+Stellar Consensus Protocol
