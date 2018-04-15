@@ -4,7 +4,8 @@ const LocalNode = require('./LocalNode');
 const { timeout } = require('./utils');
 
 class System {
-  constructor(nodeSize) {
+  constructor(nodeSize, name = 'System') {
+    this.name = name;
     this.size = nodeSize;
     this.nodes = [];
     for (let i = 0; i < nodeSize; i++) {
@@ -19,6 +20,16 @@ class System {
     }
     for (let i = 0; i < this.size; i++) {
       this.nodes[i].updateQuorumSet(fullQuorumSet.slice(0));
+    }
+  }
+
+  setHalfQuorumSetForAllNodes() {
+    for (let i = 0; i < this.size; i++) {
+      const quorumSet = [];
+      for(let j = i; j < i + this.size / 2; j++) {
+        quorumSet.push(j % this.size);
+      }
+      this.nodes[i].updateQuorumSet(quorumSet);
     }
   }
 
@@ -39,6 +50,13 @@ class System {
       s += node.getStatusString();
     }
     console.log('System Status: ' + s);
+  }
+
+  destroy() {
+    for (let i = 0; i < this.nodes.length; i++) {
+      delete this.nodes[i];
+    }
+    delete this;
   }
 }
 

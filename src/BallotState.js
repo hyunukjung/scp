@@ -56,11 +56,6 @@ class BallotState {
     this.M = {};
   }
 
-  propose(value) {
-    this.b.counter += 1;
-    this.b.value = value;
-  }
-
   getPrepareMsg() {
     const msg = { 
       nodeID: this.localNode.nodeID,
