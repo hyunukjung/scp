@@ -22,9 +22,8 @@ class Slot {
   }
 
   getPrepareMsg() {
-    const nodeID = this.localNode.nodeID;
     const msg = { 
-      nodeID: nodeID,
+      nodeID: this.localNode.nodeID,
       slotIndex: this.slotIndex,
       type: 'PREPARE',
       prepareMsg: {
@@ -33,14 +32,15 @@ class Slot {
         preparedPrime: Object.assign({}, this.p_),
         hCounter: this.h.counter,
         cCounter: this.c.counter,
-      }
+      },
+      quorumSet: this.localNode.cloneQuorumSet(),
     };
     return msg;
   }
 
   processMsg(msg) {
     const nodeID = this.localNode.nodeID;
-    console.log(`Node [${nodeID}]: process msg from node [${msg.nodeID}]`);
+    console.log(`Node${nodeID}: process msg from Node${msg.nodeID}`);
   }
 }
 

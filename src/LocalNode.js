@@ -8,10 +8,15 @@ class LocalNode {
     this.system = system;
     this.nodeID = nodeID;
     this.slots = [];
+    this.quorumSet = [];
   } 
 
   updateQuorumSet(newQuorumSet) {
     this.quorumSet = newQuorumSet;
+  }
+
+  cloneQuorumSet() {
+    return this.quorumSet.slice(0);
   }
 
   async start() {
@@ -22,19 +27,19 @@ class LocalNode {
   }
 
   tick() {
-    console.log(`Node [${this.nodeID}]: tick()`);
+    console.log(`Node${this.nodeID}: tick()`);
   }
 
-  getSlot(slotNum) {
-    if (!this.slots[slotNum]) {
-      this.slots[slotNum] = new Slot(this, slotNum);
+  getSlot(slotIndex) {
+    if (!this.slots[slotIndex]) {
+      this.slots[slotIndex] = new Slot(this, slotIndex);
     }
-    return this.slots[slotNum];
+    return this.slots[slotIndex];
   }
 
-  propose(value, slotNum = 1) {
+  propose(value, slotIndex = 1) {
     // value: string
-    const slot = this.getSlot(slotNum);
+    const slot = this.getSlot(slotIndex);
     slot.propose(value);
     const msg = slot.getPrepareMsg();
     this.sendMsg(msg);
