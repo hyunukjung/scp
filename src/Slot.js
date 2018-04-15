@@ -20,7 +20,7 @@ class Slot {
 
   processMsg(msg) {
     const nodeID = this.localNode.nodeID;
-    console.log(`Node${nodeID}: process msg from Node${msg.nodeID}`);
+    // console.log(`Node${nodeID}: process msg from Node${msg.nodeID}`);
     const from = msg.nodeID;
 
     if (msg.type === 'NOMINATE') {

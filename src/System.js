@@ -26,7 +26,7 @@ class System {
   setHalfQuorumSetForAllNodes() {
     for (let i = 0; i < this.size; i++) {
       const quorumSet = [];
-      for(let j = i; j < i + this.size / 2; j++) {
+      for(let j = i; j <= i + this.size / 2; j++) {
         quorumSet.push(j % this.size);
       }
       this.nodes[i].updateQuorumSet(quorumSet);
@@ -44,12 +44,35 @@ class System {
     this.nodes[to].processMsg(msg);
   }
 
-  printNodesStatusString() {
+  getSystemWideStatus() {
+    let value = null;
+    let status = 'Unknown';
+
+    for (const node of this.nodes) {
+      if (node.slots[1] && node.slots[1].nominationState) {
+        const state = node.slots[1].nominationState;
+        if (state.y) {
+          if (value === null) {
+            value = state.y;
+          }
+          if (value === state.y) {
+            status = 'Agreed ';
+          } else {
+            status = 'Stuck  ';
+          }
+        }
+      }
+    }
+    return status;
+  }
+
+  printStatus() {
     let s = '';
     for (const node of this.nodes) {
       s += node.getStatusString();
     }
-    console.log('System Status: ' + s);
+    const st = this.getSystemWideStatus();
+    console.log(`Status: ${st}, Nodes: ${s}`);
   }
 
   destroy() {

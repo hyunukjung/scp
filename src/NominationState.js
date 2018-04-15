@@ -35,29 +35,40 @@ class NominationState {
       needToSend = true;
     }
 
-    let countVotedOrAccepted = 0;
+    let votedOrAccepted = {};
     let countAccepted = 0;
     for (const key in this.N) {
       const msg = this.N[key];
       const value = msg.x || msg.y;
       if (value === this.z) {
-        countVotedOrAccepted++;
+        votedOrAccepted[key] = value;
       }
       if (msg.y === this.z) {
         countAccepted++;
+        // NOTE: accepted means each node in its quorum set voted or accepted.
+        for (const node of msg.quorumSet) {
+          votedOrAccepted[node] = msg.y;
+        }
+      }
+    }
+
+    let countVotedOrAccepted = 0;
+    for (const node in this.localNode.quorumSet) {
+      if(votedOrAccepted[node]) {
+        countVotedOrAccepted++;
       }
     }
 
     if (!this.y) {
-      // NOTE: assuming that threshold == quorumSet.length
-      if (countVotedOrAccepted >= this.localNode.quorumSet.length) {
+      // NOTE: assuming that threshold == quorumSet.length - 1
+      if (countVotedOrAccepted >= this.localNode.quorumSet.length - 1) {
         this.x = null;
         this.y = this.z;
         needToSend = true;
       }
     }
 
-    if (countAccepted >= this.localNode.quorumSet.length) {
+    if (countAccepted >= this.localNode.quorumSet.length - 1) {
       this.confirmed = true;
       // console.log(`Node${this.localNode.nodeID}: nominated confirmed!`);
     }
