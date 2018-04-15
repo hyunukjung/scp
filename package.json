@@ -1,0 +1,24 @@
+{
+  "name": "scp",
+  "version": "1.0.0",
+  "description": "simulation of SCP key concept.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/simulation-main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyunukjung/scp.git"
+  },
+  "keywords": [
+    "scp",
+    "stellar"
+  ],
+  "author": "hyunuk.dev@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hyunukjung/scp/issues"
+  },
+  "homepage": "https://github.com/hyunukjung/scp#readme"
+}
