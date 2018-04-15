@@ -1,0 +1,47 @@
+$ npm start
+
+> scp@1.0.0 start /Users/hyunuk/work/bos/scp
+> node src/simulation-main.js
+
+System1: started!
+Status: Unknown, Nodes: 0---1---2---3---4---5---6---7---8---9---
+Status: Unknown, Nodes: 0---1---2---3---4---5---6---7---8---9---
+Status: Unknown, Nodes: 0---1---2---3---4---5---6---7---8---9---
+Status: Unknown, Nodes: 0---1---2---3---4---5---6---7---8---9---
+Status: Unknown, Nodes: 0---1---2---3---4V3-5---6---7---8---9---
+Status: Agreed , Nodes: 0C3-1C3-2C3-3C3-4C3-5C3-6C3-7C3-8C3-9C3-
+Status: Agreed , Nodes: 0C3-1C3-2C3-3C3-4C3-5C3-6C3-7C3-8C3-9C3-
+Status: Agreed , Nodes: 0C3-1C3-2C3-3C3-4C3-5C3-6C3-7C3-8C3-9C3-
+Status: Agreed , Nodes: 0C3-1C3-2C3-3C3-4C3-5C3-6C3-7C3-8C3-9C3-
+Status: Agreed , Nodes: 0C3-1C3-2C3-3C3-4C3-5C3-6C3-7C3-8C3-9C3-
+System11: terminated!
+System2: started!
+Status: Unknown, Nodes: 0---1---2---3---4---5---6---7---8---9---
+Status: Unknown, Nodes: 0---1---2---3---4---5---6---7---8---9---
+Status: Unknown, Nodes: 0Vk-1Vk-2Vk-3Vk-4Vk-5Vk-6Vk-7Vk-8Vk-9Vk-
+Status: Unknown, Nodes: 0Vk-1Vk-2Vk-3Vk-4Vk-5Vk-6Vk-7Vk-8Vk-9Vk-
+Status: Unknown, Nodes: 0Vk-1Vk-2Vk-3Vk-4Vk-5Vk-6Vk-7Vk-8Vk-9Vk-
+Status: Unknown, Nodes: 0Vk-1Vk-2Vk-3Vk-4Vk-5Vk-6Vk-7Vk-8Vk-9Vk-
+Status: Unknown, Nodes: 0Vk-1Vk-2Vk-3Vk-4Vk-5Vk-6Vk-7Vk-8Vk-9Vk-
+Status: Unknown, Nodes: 0Vk-1Vk-2Vk-3Vk-4Vk-5Vk-6Vk-7Vk-8Vk-9Vk-
+Status: Unknown, Nodes: 0Vk-1Vk-2Vk-3Vk-4Vk-5Vk-6Vk-7Vk-8Vk-9Vk-
+Status: Unknown, Nodes: 0Vk-1Vk-2Vk-3Vk-4Vk-5Vk-6Vk-7Vk-8Vk-9Vk-
+System21: terminated!
+System3: started!
+Status: Unknown, Nodes: 0---1---2---3---4---5---6---
+Status: Unknown, Nodes: 0---1---2---3---4---5---6---
+Status: Unknown, Nodes: 0Vk-1Vk-2Vk-3Vk-4---5Vk-6---
+Status: Agreed , Nodes: 0Ak-1Ck-2Ak-3Ck-4Ck-5Ck-6Ck-
+Status: Agreed , Nodes: 0Ak-1Ck-2Ak-3Ck-4Ck-5Ck-6Ck-
+Status: Agreed , Nodes: 0Ak-1Ck-2Ak-3Ck-4Ck-5Ck-6Ck-
+Status: Agreed , Nodes: 0Ak-1Ck-2Ak-3Ck-4Ck-5Ck-6Ck-
+Status: Agreed , Nodes: 0Ak-1Ck-2Ak-3Ck-4Ck-5Ck-6Ck-
+Status: Agreed , Nodes: 0Ak-1Ck-2Ak-3Ck-4Ck-5Ck-6Ck-
+Status: Agreed , Nodes: 0Ak-1Ck-2Ak-3Ck-4Ck-5Ck-6Ck-
+System31: terminated!
+All test simulation finished!
+
+
+* V means voted
+* A means accepted
+* C means confirmed
