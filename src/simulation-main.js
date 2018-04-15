@@ -1,8 +1,8 @@
 'use strict';
 
-const NetworkModel = require('./NetworkModel');
+const System = require('./System');
 
-const network = new NetworkModel(10);
+const system = new System(10);
 
-network.setFullQuorumSetForAllNodes();
-network.startAllNodes();
+system.setFullQuorumSetForAllNodes();
+system.startAllNodes();

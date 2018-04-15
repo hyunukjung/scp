@@ -2,7 +2,7 @@
 
 const LocalNode = require('./LocalNode');
 
-class NetworkModel {
+class System {
   constructor(nodeSize) {
     this.size = nodeSize;
     this.nodes = [];
@@ -32,4 +32,4 @@ class NetworkModel {
   }
 }
 
-module.exports = NetworkModel;
+module.exports = System;
