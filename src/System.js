@@ -7,7 +7,7 @@ class System {
     this.size = nodeSize;
     this.nodes = [];
     for (let i = 0; i < nodeSize; i++) {
-      this.nodes.push(new LocalNode(i));
+      this.nodes.push(new LocalNode(this, i));
     }
   }
 
@@ -27,8 +27,8 @@ class System {
     }
   }
 
-  sendMsg(from, to, msg) {
-    this.nodes[to].onMsg(from, msg);
+  sendMsg(to, msg) {
+    this.nodes[to].processMsg(msg);
   }
 }
 
