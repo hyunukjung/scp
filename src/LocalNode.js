@@ -27,7 +27,7 @@ class LocalNode {
   }
 
   tick() {
-    console.log(`Node${this.nodeID}: tick()`);
+    // console.log(`Node${this.nodeID}: tick()`);
   }
 
   getSlot(slotIndex) {
@@ -66,7 +66,7 @@ class LocalNode {
     if (singleSlot) {
       return this.nodeID + singleSlot.getStatusString();
     } else {
-      return this.nodeID + '-';
+      return this.nodeID + '---';
     }
   }
 }

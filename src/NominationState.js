@@ -59,7 +59,7 @@ class NominationState {
 
     if (countAccepted >= this.localNode.quorumSet.length) {
       this.confirmed = true;
-      console.log(`Node${this.localNode.nodeID}: nominated confirmed!`);
+      // console.log(`Node${this.localNode.nodeID}: nominated confirmed!`);
     }
 
     if (needToSend) {
@@ -92,10 +92,6 @@ class NominationState {
       this.N[msg.nodeID] = msg;
     }
 
-    if (nodeID === from) {
-      // skip if msg from self
-      return;
-    }
     this.voteOrAccept();
   }
 

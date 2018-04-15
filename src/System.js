@@ -1,6 +1,7 @@
 'use strict';
 
 const LocalNode = require('./LocalNode');
+const { timeout } = require('./utils');
 
 class System {
   constructor(nodeSize) {
@@ -27,7 +28,8 @@ class System {
     }
   }
 
-  sendMsg(to, msg) {
+  async sendMsg(to, msg) {
+    await timeout(50);
     this.nodes[to].processMsg(msg);
   }
 
