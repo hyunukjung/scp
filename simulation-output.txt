@@ -14,7 +14,8 @@ Status: Agreed , Nodes: 0C3-1C3-2C3-3C3-4C3-5C3-6C3-7C3-8C3-9C3-
 Status: Agreed , Nodes: 0C3-1C3-2C3-3C3-4C3-5C3-6C3-7C3-8C3-9C3-
 Status: Agreed , Nodes: 0C3-1C3-2C3-3C3-4C3-5C3-6C3-7C3-8C3-9C3-
 Status: Agreed , Nodes: 0C3-1C3-2C3-3C3-4C3-5C3-6C3-7C3-8C3-9C3-
-System11: terminated!
+System1: terminated!
+
 System2: started!
 Status: Unknown, Nodes: 0---1---2---3---4---5---6---7---8---9---
 Status: Unknown, Nodes: 0---1---2---3---4---5---6---7---8---9---
@@ -26,7 +27,8 @@ Status: Unknown, Nodes: 0Vk-1Vk-2Vk-3Vk-4Vk-5Vk-6Vk-7Vk-8Vk-9Vk-
 Status: Unknown, Nodes: 0Vk-1Vk-2Vk-3Vk-4Vk-5Vk-6Vk-7Vk-8Vk-9Vk-
 Status: Unknown, Nodes: 0Vk-1Vk-2Vk-3Vk-4Vk-5Vk-6Vk-7Vk-8Vk-9Vk-
 Status: Unknown, Nodes: 0Vk-1Vk-2Vk-3Vk-4Vk-5Vk-6Vk-7Vk-8Vk-9Vk-
-System21: terminated!
+System2: terminated!
+
 System3: started!
 Status: Unknown, Nodes: 0---1---2---3---4---5---6---
 Status: Unknown, Nodes: 0---1---2---3---4---5---6---

@@ -50,6 +50,7 @@ async function printStatus(sys) {
     sys.printStatus();
     iterations--;
   }
-  console.log(sys.name + '1: terminated!');
+  console.log(sys.name + ': terminated!');
   sys.destroy();
+  console.log('');
 }
