@@ -30,6 +30,14 @@ class System {
   sendMsg(to, msg) {
     this.nodes[to].processMsg(msg);
   }
+
+  printNodesStatusString() {
+    let s = '';
+    for (const node of this.nodes) {
+      s += node.getStatusString();
+    }
+    console.log('System Status: ' + s);
+  }
 }
 
 module.exports = System;

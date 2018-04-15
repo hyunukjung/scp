@@ -37,15 +37,19 @@ class LocalNode {
     return this.slots[slotIndex];
   }
 
-  propose(value, slotIndex = 1) {
+  nominate(value, slotIndex = 1) {
     // value: string
     const slot = this.getSlot(slotIndex);
-    slot.propose(value);
-    const msg = slot.getPrepareMsg();
-    this.sendMsg(msg);
+    slot.nominate(value);
   }
 
-  sendMsg(msg) {
+  sendMsg(msg, to = null) {
+    if (to) {
+      this.system.sendMsg(to, msg);
+      return;
+    }
+
+    // Otherwise, broadcast!
     for (const node of this.quorumSet) {
       this.system.sendMsg(node, msg);
     }
@@ -54,6 +58,16 @@ class LocalNode {
   processMsg(msg) {
     const slot = this.getSlot(msg.slotIndex);
     slot.processMsg(msg);
+  }
+
+  getStatusString() {
+    // Assumes single slot (index == 1)
+    const singleSlot = this.slots[1];
+    if (singleSlot) {
+      return this.nodeID + singleSlot.getStatusString();
+    } else {
+      return this.nodeID + '-';
+    }
   }
 }
 
